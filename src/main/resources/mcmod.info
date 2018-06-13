@@ -1,0 +1,20 @@
+[
+  {
+    "modid": "Coffee",
+    "name": "Coffee",
+    "description": "Adding coffee to Minecraft even though another mod probably already does this.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "RedstoneParadox"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": [
+      ""
+    ]
+  }
+]

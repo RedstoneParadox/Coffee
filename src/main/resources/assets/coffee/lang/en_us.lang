@@ -1,0 +1,7 @@
+#Items
+
+item.coffee.coffee_bean.name=Coffee Bean
+item.coffee.roasted_coffee_bean.name=Roasted Coffee Bean
+item.coffee.mug.name=Mug
+item.coffee.mug_water.name=Cup of Water
+item.coffee.mug_coffee.name=Cup of Coffee
