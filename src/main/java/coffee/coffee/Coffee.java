@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 
 @Mod(
@@ -39,6 +40,7 @@ public class Coffee {
         logger = event.getModLog();
         proxy.preInit(event);
         MinecraftForge.EVENT_BUS.register(new CoffeeEventHandler());
+        GameRegistry.registerWorldGenerator(new CoffeeBeanWorldGen(), 3);
     }
 
     /**
