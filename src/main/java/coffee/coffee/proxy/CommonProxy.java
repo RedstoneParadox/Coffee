@@ -1,7 +1,9 @@
 package coffee.coffee.proxy;
 
 import coffee.coffee.blocks.CoffeeBeanPod;
-import coffee.coffee.items.*;
+import coffee.coffee.items.CoffeeBean;
+import coffee.coffee.items.Mug;
+import coffee.coffee.items.RoastedBean;
 import coffee.coffee.items.beverages.MugCoffee;
 import coffee.coffee.items.beverages.MugWater;
 import coffee.coffee.potion.Caffeinated;

@@ -17,6 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class MugCoffee extends CoffeeBase {
 
+
     public MugCoffee(int amount, float saturation, boolean isWolfFood) {
         super(amount, saturation, isWolfFood);
         setCreativeTab(CreativeTabs.BREWING);
