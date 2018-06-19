@@ -1,5 +1,6 @@
 package coffee.coffee;
 
+import coffee.coffee.brewables.CoffeeBrewables;
 import coffee.coffee.proxy.CommonProxy;
 import coffee.coffee.recipe.CoffeeRecipes;
 import net.minecraftforge.common.MinecraftForge;
@@ -38,6 +39,7 @@ public class Coffee {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
+        new CoffeeBrewables();
         proxy.preInit(event);
         MinecraftForge.EVENT_BUS.register(new CoffeeEventHandler());
         GameRegistry.registerWorldGenerator(new CoffeeBeanWorldGen(), 3);
