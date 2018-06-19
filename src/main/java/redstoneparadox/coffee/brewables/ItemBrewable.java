@@ -1,6 +1,5 @@
 package redstoneparadox.coffee.brewables;
 
-import redstoneparadox.coffee.items.CoffeeItems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -17,22 +16,21 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import redstoneparadox.coffee.items.CoffeeItems;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by RedstoneParadox on 6/16/2018.
  */
 public class ItemBrewable extends ItemFood {
 
-    static List<PotionEffect> potionEffects = new ArrayList<>();
+    static ArrayList<PotionEffect> potionEffects = new ArrayList<>();
 
     public ItemBrewable(int amount, float saturation, boolean isWolfFood, ArrayList<PotionEffect> potionEffects) {
         super(amount, saturation, isWolfFood);
         this.setCreativeTab(CreativeTabs.BREWING);
         potionEffects.containsAll(potionEffects);
-
     }
 
     @SideOnly(Side.CLIENT)
@@ -79,6 +77,7 @@ public class ItemBrewable extends ItemFood {
         playerIn.setActiveHand(handIn);
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
     }
+
     public void applyPotionEffects(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         for (int i = 0; i < potionEffects.size(); i++) {
             entityLiving.addPotionEffect(potionEffects.get(i));

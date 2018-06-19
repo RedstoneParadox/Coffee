@@ -1,13 +1,14 @@
 package redstoneparadox.coffee;
 
-import redstoneparadox.coffee.proxy.CommonProxy;
-import redstoneparadox.coffee.recipe.CoffeeRecipes;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import redstoneparadox.coffee.proxy.CommonProxy;
+import redstoneparadox.coffee.recipe.CoffeeRecipes;
 
 @Mod(
         modid = Coffee.MOD_ID,
@@ -20,13 +21,13 @@ public class Coffee {
     public static final String MOD_NAME = "coffee";
     public static final String VERSION = "0.0.1";
 
-    @SidedProxy(clientSide = "ClientProxy", serverSide = "coffee.coffee.proxy.ServerProxy")
+    @SidedProxy(clientSide = "redstoneparadox.coffee.proxy.ClientProxy", serverSide = "redstoneparadox.coffee.proxy.ServerProxy")
     public static CommonProxy proxy;
 
     @Mod.Instance
     public static Coffee instance;
 
-    public static Logger logger;
+    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     /**
      * This is the first initialization event. Register tile entities here.
@@ -35,7 +36,6 @@ public class Coffee {
 
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-        logger = event.getModLog();
         proxy.preInit(event);
     }
 

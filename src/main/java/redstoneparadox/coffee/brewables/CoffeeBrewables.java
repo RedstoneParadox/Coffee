@@ -1,7 +1,7 @@
 package redstoneparadox.coffee.brewables;
 
-import redstoneparadox.coffee.Coffee;
 import redstoneparadox.coffee.items.CoffeeItems;
+import redstoneparadox.coffee.Coffee;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -10,5 +10,11 @@ import net.minecraft.item.ItemStack;
  */
 public class CoffeeBrewables {
 
-    public static final BrewableType COFFEE_COFFEE = new BrewableType(Coffee.MOD_ID, new ItemStack(CoffeeItems.MUG),new ItemStack(Items.REDSTONE), 2, new ItemStack(Items.GLOWSTONE_DUST),  0.5);
+    public static final BrewableType COFFEE_COFFEE = new BrewableType(
+            Coffee.MOD_ID, new ItemStack(CoffeeItems.MUG),
+            new ItemStack(Items.REDSTONE),
+            2,
+            new ItemStack(Items.GLOWSTONE_DUST),
+            0.5
+    );
 }

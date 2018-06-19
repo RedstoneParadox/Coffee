@@ -59,8 +59,8 @@ public class BrewableType {
         );
 
         if (longIngredient != null) {
-            buildPotionEffectList(potionEffects, longPotionEffectsList,longMultiplier, 0);
-            event.getRegistry().register(new ItemBrewable(amount, saturation, false, longPotionEffectsList).setRegistryName("long_" + name).setUnlocalizedName(modID + "." + "extended_" + name));
+            ArrayList<PotionEffect> list = buildPotionEffectList(potionEffects, longMultiplier, 0);
+            event.getRegistry().register(new ItemBrewable(amount, saturation, false, list).setRegistryName("long_" + name).setUnlocalizedName(modID + "." + "extended_" + name));
             Item itemExtended = ForgeRegistries.ITEMS.getValue(extendedLocation);
 
             BrewingRecipeRegistry.addRecipe(
@@ -71,8 +71,8 @@ public class BrewableType {
 
         }
         if (strongIngredient != null) {
-            buildPotionEffectList(potionEffects, strongPotionEffectsList,strongMultiplier, 1);
-            event.getRegistry().register(new ItemBrewable(amount, saturation, false, potionEffects).setRegistryName("strong_" + name).setUnlocalizedName(modID + "." + "strong_" + name));
+            ArrayList<PotionEffect> list = buildPotionEffectList(potionEffects, strongMultiplier, 1);
+            event.getRegistry().register(new ItemBrewable(amount, saturation, false, list).setRegistryName("strong_" + name).setUnlocalizedName(modID + "." + "strong_" + name));
             Item itemEnhanced = ForgeRegistries.ITEMS.getValue(strongLocation);
 
             BrewingRecipeRegistry.addRecipe(
@@ -102,16 +102,16 @@ public class BrewableType {
     }
 
     /* Used to create potion lists for the variants with modified durations and amplifiers.*/
-    public void buildPotionEffectList(ArrayList<PotionEffect> potionEffects, ArrayList<PotionEffect> editList, double durationMultiplier, int levelBonus) {
-        editList.clear();
+    public ArrayList<PotionEffect> buildPotionEffectList(ArrayList<PotionEffect> potionEffects, double durationMultiplier, int levelBonus) {
+        ArrayList<PotionEffect> potionEffectList = new ArrayList<>();
 
         for (int i=0; i < potionEffects.size(); i++) {
             Potion potionEffect = potionEffects.get(i).getPotion();
             int duration = potionEffects.get(i).getDuration();
             int amplifier = potionEffects.get(i).getAmplifier();
 
-            editList.add(new PotionEffect(potionEffect, Math.toIntExact(Math.round(duration * durationMultiplier)), amplifier + levelBonus));
+            potionEffectList.add(new PotionEffect(potionEffect, Math.toIntExact(Math.round(duration * durationMultiplier)), amplifier + levelBonus));
         }
-        return;
+        return potionEffectList;
     }
 }

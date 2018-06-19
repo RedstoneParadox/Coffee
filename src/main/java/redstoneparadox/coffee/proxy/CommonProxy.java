@@ -2,9 +2,13 @@ package redstoneparadox.coffee.proxy;
 
 import redstoneparadox.coffee.CoffeeBeanWorldGen;
 import redstoneparadox.coffee.CoffeeEventHandler;
-import redstoneparadox.coffee.brewables.CoffeeBrewables;
+import redstoneparadox.coffee.blocks.CoffeeBeanPod;
 import redstoneparadox.coffee.items.CoffeeBean;
+import redstoneparadox.coffee.items.RoastedBean;
+import redstoneparadox.coffee.items.beverages.MugCoffee;
 import redstoneparadox.coffee.items.beverages.MugWater;
+import redstoneparadox.coffee.potion.Caffeinated;
+import redstoneparadox.coffee.brewables.CoffeeBrewables;
 import net.minecraft.block.Block;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -18,11 +22,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import redstoneparadox.coffee.blocks.CoffeeBeanPod;
 import redstoneparadox.coffee.items.Mug;
-import redstoneparadox.coffee.items.RoastedBean;
-import redstoneparadox.coffee.items.beverages.MugCoffee;
-import redstoneparadox.coffee.potion.Caffeinated;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.ArrayList;

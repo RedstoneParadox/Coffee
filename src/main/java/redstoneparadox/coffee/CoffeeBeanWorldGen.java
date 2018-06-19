@@ -17,6 +17,8 @@ import java.util.Random;
  */
 public class CoffeeBeanWorldGen implements IWorldGenerator {
 
+    //DecorateBiomeEvent.Post
+
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         if (world.provider.getDimension() == 0) {
