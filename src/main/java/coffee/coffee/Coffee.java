@@ -1,15 +1,12 @@
 package coffee.coffee;
 
-import coffee.coffee.brewables.CoffeeBrewables;
 import coffee.coffee.proxy.CommonProxy;
 import coffee.coffee.recipe.CoffeeRecipes;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 
 @Mod(
@@ -23,7 +20,7 @@ public class Coffee {
     public static final String MOD_NAME = "coffee";
     public static final String VERSION = "0.0.1";
 
-    @SidedProxy(clientSide = "coffee.coffee.proxy.ClientProxy", serverSide = "coffee.coffee.proxy.ServerProxy")
+    @SidedProxy(clientSide = "ClientProxy", serverSide = "coffee.coffee.proxy.ServerProxy")
     public static CommonProxy proxy;
 
     @Mod.Instance
@@ -39,10 +36,7 @@ public class Coffee {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
-        new CoffeeBrewables();
         proxy.preInit(event);
-        MinecraftForge.EVENT_BUS.register(new CoffeeEventHandler());
-        GameRegistry.registerWorldGenerator(new CoffeeBeanWorldGen(), 3);
     }
 
     /**

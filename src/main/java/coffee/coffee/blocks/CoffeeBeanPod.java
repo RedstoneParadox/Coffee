@@ -1,7 +1,7 @@
 package coffee.coffee.blocks;
 
-import coffee.coffee.Coffee;
 import coffee.coffee.items.CoffeeItems;
+import coffee.coffee.Coffee;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockPlanks;
