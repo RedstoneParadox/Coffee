@@ -1,7 +1,7 @@
-package coffee.coffee.blocks;
+package redstoneparadox.coffee.blocks;
 
-import coffee.coffee.items.CoffeeItems;
-import coffee.coffee.Coffee;
+import redstoneparadox.coffee.items.CoffeeItems;
+import redstoneparadox.coffee.Coffee;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockPlanks;

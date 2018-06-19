@@ -1,4 +1,4 @@
-package coffee.coffee.items.beverages;
+package redstoneparadox.coffee.items.beverages;
 
 /**
  * Created by RedstoneParadox on 6/11/2018.

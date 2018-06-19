@@ -1,6 +1,6 @@
-package coffee.coffee.items;
+package redstoneparadox.coffee.items;
 
-import coffee.coffee.Coffee;
+import redstoneparadox.coffee.Coffee;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

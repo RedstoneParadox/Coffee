@@ -1,4 +1,4 @@
-package coffee.coffee.blocks;
+package redstoneparadox.coffee.blocks;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;

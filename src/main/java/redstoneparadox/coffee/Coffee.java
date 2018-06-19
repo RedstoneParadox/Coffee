@@ -1,7 +1,7 @@
-package coffee.coffee;
+package redstoneparadox.coffee;
 
-import coffee.coffee.proxy.CommonProxy;
-import coffee.coffee.recipe.CoffeeRecipes;
+import redstoneparadox.coffee.proxy.CommonProxy;
+import redstoneparadox.coffee.recipe.CoffeeRecipes;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

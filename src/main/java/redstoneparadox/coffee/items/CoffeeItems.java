@@ -1,7 +1,7 @@
-package coffee.coffee.items;
+package redstoneparadox.coffee.items;
 
-import coffee.coffee.items.beverages.MugWater;
-import coffee.coffee.items.beverages.MugCoffee;
+import redstoneparadox.coffee.items.beverages.MugWater;
+import redstoneparadox.coffee.items.beverages.MugCoffee;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

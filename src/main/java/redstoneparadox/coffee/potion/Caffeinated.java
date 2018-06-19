@@ -1,4 +1,4 @@
-package coffee.coffee.potion;
+package redstoneparadox.coffee.potion;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.Potion;

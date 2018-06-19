@@ -1,8 +1,8 @@
-package coffee.coffee.brewables;
+package redstoneparadox.coffee.items.beverages;
 
-import coffee.coffee.items.CoffeeItems;
+import redstoneparadox.coffee.items.CoffeeItems;
+import redstoneparadox.coffee.potion.CoffeePotions;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -18,21 +18,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Created by RedstoneParadox on 6/16/2018.
+ * Created by RedstoneParadox on 6/11/2018.
  */
-public class ItemBrewable extends ItemFood {
+public class CoffeeBase extends ItemFood {
 
-    static List<PotionEffect> potionEffects = new ArrayList<>();
-
-    public ItemBrewable(int amount, float saturation, boolean isWolfFood, ArrayList<PotionEffect> potionEffects) {
+    public CoffeeBase(int amount, float saturation, boolean isWolfFood) {
         super(amount, saturation, isWolfFood);
-        this.setCreativeTab(CreativeTabs.BREWING);
-        potionEffects.containsAll(potionEffects);
-
     }
 
     @SideOnly(Side.CLIENT)
@@ -44,7 +36,17 @@ public class ItemBrewable extends ItemFood {
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
     {
         if (!worldIn.isRemote) {
-            applyPotionEffects(stack, worldIn, entityLiving);
+            if (entityLiving.getActivePotionEffect(CoffeePotions.CAFFEINATED) != null) {
+                if (entityLiving.getActivePotionEffect(CoffeePotions.CAFFEINATED).getDuration() > 1200) {
+                    entityLiving.addPotionEffect(new PotionEffect(CoffeePotions.CAFFEINATED,6000,2));
+                }
+                else {
+                    caffeinate(stack, entityLiving);
+                }
+            }
+            else {
+                caffeinate(stack, entityLiving);
+            }
         }
         if (entityLiving instanceof EntityPlayerMP)
         {
@@ -79,10 +81,9 @@ public class ItemBrewable extends ItemFood {
         playerIn.setActiveHand(handIn);
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
     }
-    public void applyPotionEffects(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
-        for (int i = 0; i < potionEffects.size(); i++) {
-            entityLiving.addPotionEffect(potionEffects.get(i));
-        }
+
+    public void caffeinate(ItemStack stack, EntityLivingBase entityLiving) {
+        entityLiving.curePotionEffects(stack);
         return;
     }
 }

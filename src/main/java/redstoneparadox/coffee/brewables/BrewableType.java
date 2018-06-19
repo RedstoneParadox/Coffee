@@ -1,4 +1,4 @@
-package coffee.coffee.brewables;
+package redstoneparadox.coffee.brewables;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

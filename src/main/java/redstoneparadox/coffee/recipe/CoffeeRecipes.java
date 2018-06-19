@@ -1,6 +1,6 @@
-package coffee.coffee.recipe;
+package redstoneparadox.coffee.recipe;
 
-import coffee.coffee.items.CoffeeItems;
+import redstoneparadox.coffee.items.CoffeeItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;

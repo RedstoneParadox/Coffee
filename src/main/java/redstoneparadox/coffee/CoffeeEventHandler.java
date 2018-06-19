@@ -1,6 +1,6 @@
-package coffee.coffee;
+package redstoneparadox.coffee;
 
-import coffee.coffee.potion.CoffeePotions;
+import redstoneparadox.coffee.potion.CoffeePotions;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;

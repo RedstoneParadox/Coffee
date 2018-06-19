@@ -1,7 +1,7 @@
-package coffee.coffee.brewables;
+package redstoneparadox.coffee.brewables;
 
-import coffee.coffee.Coffee;
-import coffee.coffee.items.CoffeeItems;
+import redstoneparadox.coffee.Coffee;
+import redstoneparadox.coffee.items.CoffeeItems;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 

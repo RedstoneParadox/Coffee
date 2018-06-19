@@ -1,6 +1,6 @@
-package coffee.coffee.proxy;
+package redstoneparadox.coffee.proxy;
 
-import coffee.coffee.items.CoffeeItems;
+import redstoneparadox.coffee.items.CoffeeItems;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

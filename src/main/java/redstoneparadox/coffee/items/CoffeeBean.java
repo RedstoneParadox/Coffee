@@ -1,6 +1,6 @@
-package coffee.coffee.items;
+package redstoneparadox.coffee.items;
 
-import coffee.coffee.Coffee;
+import redstoneparadox.coffee.Coffee;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -9,13 +9,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * Created by RedstoneParadox on 6/11/2018.
+ * Created by RedstoneParadox on 6/10/2018.
  */
-public class RoastedBean extends Item{
+public class CoffeeBean extends Item {
 
-    public RoastedBean() {
+    public CoffeeBean() {
         setCreativeTab(CreativeTabs.MATERIALS);
-        setUnlocalizedName(Coffee.MOD_ID + ".roasted_coffee_bean");
+        setUnlocalizedName(Coffee.MOD_ID + ".coffee_bean");
     }
 
     @SideOnly(Side.CLIENT)
