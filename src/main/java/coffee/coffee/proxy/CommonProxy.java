@@ -1,6 +1,7 @@
 package coffee.coffee.proxy;
 
 import coffee.coffee.blocks.CoffeeBeanPod;
+import coffee.coffee.brewables.CoffeeBrewables;
 import coffee.coffee.items.CoffeeBean;
 import coffee.coffee.items.Mug;
 import coffee.coffee.items.RoastedBean;
@@ -10,6 +11,7 @@ import coffee.coffee.potion.Caffeinated;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -43,6 +45,16 @@ public class CommonProxy {
         event.getRegistry().register(new Mug().setRegistryName("mug"));
         event.getRegistry().register(new MugWater(1,1,false).setRegistryName("mug_water"));
         event.getRegistry().register(new MugCoffee(1,1,false).setRegistryName("mug_coffee"));
+
+        CoffeeBrewables.COFFEE_COFFEE.registerBrewable(
+                event,
+                "example_potion",
+                new ResourceLocation("coffee:mug_water"),
+                new ResourceLocation("coffee:coffee_bean"),
+                1,
+                1,
+                null
+        );
     }
 
     @SubscribeEvent

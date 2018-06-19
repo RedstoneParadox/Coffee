@@ -79,7 +79,6 @@ public class ItemBrewable extends ItemFood {
         playerIn.setActiveHand(handIn);
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
     }
-
     public void applyPotionEffects(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         for (int i = 0; i < potionEffects.size(); i++) {
             entityLiving.addPotionEffect(potionEffects.get(i));
